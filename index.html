@@ -3,127 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Me Veste Deda | Preço Justo & Sob Medida</title>
+    <title>Me Veste Deda | Ateliê Premium</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { font-family: 'Montserrat', sans-serif; background-color: #fdfbf9; }
+        body { font-family: 'Montserrat', sans-serif; background-color: #FAF9F6; color: #1A1A1A; }
         .font-serif { font-family: 'Playfair Display', serif; }
-        .promo-glow { animation: glow 2s infinite; }
-        @keyframes glow {
-            0%, 100% { box-shadow: 0 0 5px rgba(168, 85, 247, 0.4); }
-            50% { box-shadow: 0 0 20px rgba(168, 85, 247, 0.8); }
-        }
-        details > summary { list-style: none; }
-        details > summary::-webkit-details-marker { display: none; }
+        .gold-glow { box-shadow: 0 0 15px rgba(197, 165, 114, 0.5); }
+        .filter-active { background-color: #C5A572 !important; color: white !important; }
+        .hidden { display: none; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        
+        /* Estilo para os cards clicáveis */
+        .price-item:active { background-color: #f0f0f0; transform: scale(0.98); }
     </style>
 </head>
-<body class="pb-24">
+<body class="pb-28">
 
     <div class="fixed bottom-6 right-6 flex flex-col gap-4 z-[100]">
-        <a href="https://www.instagram.com/fitech_cell" target="_blank" class="bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-600 w-14 h-14 rounded-full flex items-center justify-center text-white text-2xl shadow-lg transform active:scale-90 transition">
+        <a href="https://www.instagram.com/fitech_cell" target="_blank" class="bg-black w-14 h-14 rounded-full flex items-center justify-center text-[#C5A572] text-2xl shadow-xl border border-[#C5A572]/30 transform active:scale-90 transition">
             <i class="fa-brands fa-instagram"></i>
         </a>
-        <a href="https://wa.me/5571993083959?text=Olá%20Deda!%20Vim%20pelo%20site%20e%20quero%20fazer%20um%20pedido." target="_blank" class="bg-green-500 w-14 h-14 rounded-full flex items-center justify-center text-white text-3xl shadow-lg transform active:scale-90 transition">
+        <a href="https://wa.me/5571993083959" target="_blank" class="bg-[#25D366] w-14 h-14 rounded-full flex items-center justify-center text-white text-3xl shadow-xl transform active:scale-90 transition">
             <i class="fa-brands fa-whatsapp"></i>
         </a>
     </div>
 
-    <header class="p-4">
-        <div class="relative h-[250px] rounded-3xl overflow-hidden promo-glow border-2 border-purple-500">
-            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800" class="absolute inset-0 w-full h-full object-cover brightness-50">
+    <header class="p-4" id="section-promo">
+        <a href="https://wa.me/5571993083959?text=Quero%20saber%20mais%20sobre%20as%20promoções%20da%20semana" class="block relative h-[200px] rounded-2xl overflow-hidden gold-glow border border-[#C5A572]/50">
+            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800" class="absolute inset-0 w-full h-full object-cover brightness-[0.4]">
             <div class="relative z-10 flex flex-col items-center justify-center h-full text-center p-4">
-                <span class="bg-purple-600 text-white text-[10px] font-bold px-3 py-1 rounded-full mb-2 uppercase tracking-tighter">Oferta da Semana</span>
-                <h2 class="text-white text-2xl font-extrabold uppercase italic">Vestidos de Linho</h2>
-                <p class="text-yellow-400 font-bold text-xl">A partir de R$ 89,90</p>
-                <button class="mt-3 bg-white text-black text-xs font-bold px-6 py-2 rounded-full uppercase">Ver Modelos</button>
+                <span class="bg-[#C5A572] text-black text-[10px] font-extrabold px-3 py-1 rounded-full mb-2 uppercase italic tracking-widest">Destaque da Semana</span>
+                <h2 class="text-white text-3xl font-serif">Moda Verão 2026</h2>
+                <p class="text-[#C5A572] font-bold text-sm mt-1 uppercase tracking-tighter">Peças exclusivas com preços de ateliê</p>
             </div>
-        </div>
+        </a>
     </header>
 
-    <div class="text-center py-6">
-        <h1 class="font-serif text-4xl text-gray-800">Me Veste Deda</h1>
-        <p class="text-xs tracking-[0.2em] text-gray-500 uppercase mt-1">O melhor preço de Salvador</p>
+    <div class="text-center py-4">
+        <h1 class="font-serif text-4xl font-bold tracking-tight text-black">ME VESTE <span class="text-[#C5A572]">DEDA</span></h1>
+        <p class="text-[9px] tracking-[0.4em] text-gray-400 uppercase">Costura Artesanal • Salvador</p>
     </div>
 
     <div class="flex gap-3 overflow-x-auto px-4 mb-8 no-scrollbar">
-        <span class="bg-black text-white px-5 py-2 rounded-full text-xs font-bold whitespace-nowrap">Tudo</span>
-        <span class="bg-gray-200 text-gray-700 px-5 py-2 rounded-full text-xs font-bold whitespace-nowrap">Vestidos</span>
-        <span class="bg-gray-200 text-gray-700 px-5 py-2 rounded-full text-xs font-bold whitespace-nowrap">Reformas</span>
-        <span class="bg-gray-200 text-gray-700 px-5 py-2 rounded-full text-xs font-bold whitespace-nowrap">Moda Verão</span>
+        <button onclick="filterContent('all')" id="btn-all" class="filter-btn filter-active px-6 py-2 rounded-full text-[11px] font-bold whitespace-nowrap uppercase transition">Tudo</button>
+        <button onclick="filterContent('vestido')" id="btn-vestido" class="filter-btn bg-white border border-gray-200 px-6 py-2 rounded-full text-[11px] font-bold whitespace-nowrap uppercase transition">Vestidos</button>
+        <button onclick="filterContent('reforma')" id="btn-reforma" class="filter-btn bg-white border border-gray-100 px-6 py-2 rounded-full text-[11px] font-bold whitespace-nowrap uppercase transition">Reformas</button>
+        <button onclick="filterContent('verao')" id="btn-verao" class="filter-btn bg-white border border-gray-100 px-6 py-2 rounded-full text-[11px] font-bold whitespace-nowrap uppercase transition gold-glow border-[#C5A572]">Moda Verão ✨</button>
+        <button onclick="filterContent('portf')" id="btn-portf" class="filter-btn bg-white border border-gray-100 px-6 py-2 rounded-full text-[11px] font-bold whitespace-nowrap uppercase transition italic">Minhas Criações</button>
     </div>
 
-    <section class="px-4 space-y-6">
+    <div class="px-4 space-y-6">
         
-        <details class="group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-            <summary class="cursor-pointer">
+        <section id="cat-vestido" class="content-item">
+            <div class="bg-white rounded-3xl p-1 shadow-sm border border-gray-100">
                 <div class="flex items-center p-4 gap-4">
-                    <img src="https://images.unsplash.com/photo-1572804013307-a9a111784b24?w=400" class="w-16 h-16 rounded-xl object-cover">
-                    <div class="flex-1">
-                        <h3 class="font-bold text-lg">Vestido Sob Medida</h3>
-                        <p class="text-xs text-purple-600 italic">"Feito no seu corpo"</p>
+                    <div class="w-16 h-16 rounded-2xl bg-[#FAF9F6] flex items-center justify-center border border-[#C5A572]/20">
+                        <i class="fa-solid fa-person-dress text-3xl text-[#C5A572]"></i>
                     </div>
-                    <i class="fa-solid fa-chevron-down text-gray-300 group-open:rotate-180 transition"></i>
-                </div>
-            </summary>
-            <div class="p-4 pt-0 border-t border-gray-50 space-y-3 bg-gray-50">
-                <div class="flex justify-between items-center text-sm p-2 bg-white rounded-lg">
-                    <span>Vestido Curto (Viscose)</span>
-                    <span class="font-bold text-green-600">R$ 45,00</span>
-                </div>
-                <div class="flex justify-between items-center text-sm p-2 bg-white rounded-lg">
-                    <span>Vestido Longo (Linho)</span>
-                    <span class="font-bold text-green-600">R$ 85,00</span>
-                </div>
-                <div class="flex justify-between items-center text-sm p-2 bg-white rounded-lg">
-                    <span>Vestido de Festa (Seda/Cetim)</span>
-                    <span class="font-bold text-green-600">A partir de R$ 120</span>
-                </div>
-                <p class="text-[10px] text-gray-400 text-center uppercase py-2">* Tecido não incluso no valor da costura</p>
-            </div>
-        </details>
-
-        <details class="group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-            <summary class="cursor-pointer">
-                <div class="flex items-center p-4 gap-4">
-                    <img src="https://images.unsplash.com/photo-1556905055-8f358a7a4bb4?w=400" class="w-16 h-16 rounded-xl object-cover">
                     <div class="flex-1">
-                        <h3 class="font-bold text-lg">Reformas em Geral</h3>
-                        <p class="text-xs text-purple-600 italic">"Do jeito que você quer"</p>
+                        <h3 class="font-bold text-lg font-serif">Vestido Sob Medida</h3>
+                        <p class="text-[11px] text-[#C5A572] font-semibold italic">"Feito no seu corpo"</p>
                     </div>
-                    <i class="fa-solid fa-chevron-down text-gray-300 group-open:rotate-180 transition"></i>
                 </div>
-            </summary>
-            <div class="p-4 pt-0 border-t border-gray-50 space-y-3 bg-gray-50">
-                <div class="flex justify-between items-center text-sm p-2 bg-white rounded-lg">
-                    <span>Fazer Bainha</span>
-                    <span class="font-bold text-green-600">R$ 15,00</span>
-                </div>
-                <div class="flex justify-between items-center text-sm p-2 bg-white rounded-lg">
-                    <span>Trocar Zíper</span>
-                    <span class="font-bold text-green-600">R$ 12,00</span>
-                </div>
-                <div class="flex justify-between items-center text-sm p-2 bg-white rounded-lg">
-                    <span>Ajustar Cintura</span>
-                    <span class="font-bold text-green-600">R$ 20,00</span>
-                </div>
-                <div class="flex justify-between items-center text-sm p-2 bg-white rounded-lg">
-                    <span>Apertar Perna de Calça</span>
-                    <span class="font-bold text-green-600">R$ 18,00</span>
+                
+                <div class="px-4 pb-4 space-y-2">
+                    <a href="https://wa.me/5571993083959?text=Quero%20um%20Vestido%20Curto%20de%20Viscose" class="price-item flex justify-between items-center p-3 bg-[#FAF9F6] rounded-xl transition">
+                        <span class="text-sm font-medium">Vestido Curto (Viscose)</span>
+                        <span class="font-bold text-black">R$ 45</span>
+                    </a>
+                    <a href="https://wa.me/5571993083959?text=Quero%20um%20Vestido%20Longo%20de%20Linho" class="price-item flex justify-between items-center p-3 bg-[#FAF9F6] rounded-xl transition">
+                        <span class="text-sm font-medium">Vestido Longo (Linho)</span>
+                        <span class="font-bold text-black">R$ 60</span>
+                    </a>
+                    <a href="https://wa.me/5571993083959?text=Quero%20um%20Vestido%20de%20Festa" class="price-item flex justify-between items-center p-3 bg-[#FAF9F6] rounded-xl transition border border-[#C5A572]/20">
+                        <span class="text-sm font-medium">Vestido de Festa</span>
+                        <span class="font-bold text-black text-xs">A partir R$ 85</span>
+                    </a>
                 </div>
             </div>
-        </details>
+        </section>
 
-    </section>
+        <section id="cat-reforma" class="content-item">
+            <div class="bg-white rounded-3xl p-1 shadow-sm border border-gray-100">
+                <div class="flex items-center p-4 gap-4">
+                    <div class="w-16 h-16 rounded-2xl bg-[#FAF9F6] flex items-center justify-center border border-[#C5A572]/20">
+                        <i class="fa-solid fa-mitten text-3xl text-[#C5A572]"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-lg font-serif">Reformas em Geral</h3>
+                        <p class="text-[11px] text-gray-400 font-semibold italic">"Do jeito que você quer"</p>
+                    </div>
+                </div>
+                
+                <div class="px-4 pb-4 grid grid-cols-2 gap-2">
+                    <div class="p-3 bg-gray-50 rounded-xl border border-gray-100">
+                        <p class="text-[10px] text-gray-400 uppercase font-bold">Bainha</p>
+                        <p class="font-bold">R$ 15</p>
+                    </div>
+                    <div class="p-3 bg-gray-50 rounded-xl border border-gray-100">
+                        <p class="text-[10px] text-gray-400 uppercase font-bold">Zíper</p>
+                        <p class="font-bold">R$ 12</p>
+                    </div>
+                    <div class="p-3 bg-gray-50 rounded-xl border border-gray-100">
+                        <p class="text-[10px] text-gray-400 uppercase font-bold">Ajuste Cintura</p>
+                        <p class="font-bold">R$ 20</p>
+                    </div>
+                    <div class="p-3 bg-gray-50 rounded-xl border border-gray-100">
+                        <p class="text-[10px] text-gray-400 uppercase font-bold">Apertar Calça</p>
+                        <p class="font-bold">R$ 18</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <footer class="mt-12 px-6 text-center">
-        <div class="bg-purple-50 p-6 rounded-3xl">
-            <h4 class="font-serif text-xl mb-2">Por que a Deda?</h4>
-            <p class="text-sm text-gray-600">Minha mãe costura com amor há décadas. O <strong>Me Veste Deda</strong> nasceu para provar que você pode ter roupas de grife gastando muito menos.</p>
-        </div>
-        <p class="mt-8 text-[10px] text-gray-400 uppercase tracking-widest">Salvador - Bahia | 2026</p>
-    </footer>
+        <section id="cat-portf" class="content-item hidden">
+            <h4 class="font-serif text-center text-xl mb-4 text-[#C5A572]">Minhas Criações</h4>
+            <div class="grid grid-cols-2 gap-3">
+                <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400" class="rounded-2xl h-40 w-full object-cover">
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400" class="rounded-2xl h-40 w-full object-cover">
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        function filterContent(category) {
+            // Remove classe ativa de todos os botões
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('filter-active');
+                btn.classList.add('bg-white');
+            });
+
+            // Adiciona classe ativa no botão clicado
+            document.getElementById('btn-' + category).classList.add('filter-active');
+
+            // Lógica de exibição
+            const items = document.querySelectorAll('.content-item');
+            
+            if (category === 'all') {
+                items.forEach(item => item.classList.remove('hidden'));
+            } else if (category === 'vestido') {
+                items.forEach(item => {
+                    item.id === 'cat-vestido' ? item.classList.remove('hidden') : item.classList.add('hidden');
+                });
+            } else if (category === 'reforma') {
+                items.forEach(item => {
+                    item.id === 'cat-reforma' ? item.classList.remove('hidden') : item.classList.add('hidden');
+                });
+            } else {
+                // Outras categorias como 'verao' ou 'portf'
+                items.forEach(item => {
+                    item.id === 'cat-' + category ? item.classList.remove('hidden') : item.classList.add('hidden');
+                });
+            }
+        }
+    </script>
 
 </body>
 </html>
