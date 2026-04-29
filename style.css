@@ -1,18 +1,1 @@
-body {
-    font-family: 'Montserrat', sans-serif;
-    scroll-behavior: smooth;
-}
 
-h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
-}
-
-/* Efeito de suavidade ao carregar no celular */
-.card-appear {
-    animation: fadeIn 0.8s ease-out forwards;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
