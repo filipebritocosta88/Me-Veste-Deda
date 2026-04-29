@@ -3,26 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Me Veste Deda | Ateliê Premium</title>
+    <title>Me Veste Deda | Ateliê Salvador</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Plus+Jakarta+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { font-family: 'Montserrat', sans-serif; background-color: #FAF9F6; color: #1A1A1A; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #FAF9F6; color: #1A1A1A; }
         .font-serif { font-family: 'Playfair Display', serif; }
-        .gold-glow { box-shadow: 0 0 15px rgba(197, 165, 114, 0.5); }
-        .filter-active { background-color: #C5A572 !important; color: white !important; }
-        .hidden { display: none; }
+        .gold-border { border: 1px solid rgba(197, 165, 114, 0.3); }
         .no-scrollbar::-webkit-scrollbar { display: none; }
-        
-        /* Estilo para os cards clicáveis */
-        .price-item:active { background-color: #f0f0f0; transform: scale(0.98); }
+        .delete-btn { display: none; }
+        .group:hover .delete-btn { display: block; }
     </style>
 </head>
-<body class="pb-28">
+<body class="pb-24">
 
     <div class="fixed bottom-6 right-6 flex flex-col gap-4 z-[100]">
-        <a href="https://www.instagram.com/fitech_cell" target="_blank" class="bg-black w-14 h-14 rounded-full flex items-center justify-center text-[#C5A572] text-2xl shadow-xl border border-[#C5A572]/30 transform active:scale-90 transition">
+        <a href="https://www.instagram.com/fitech_cell" target="_blank" class="bg-black w-14 h-14 rounded-full flex items-center justify-center text-[#C5A572] text-2xl shadow-xl transform active:scale-90 transition">
             <i class="fa-brands fa-instagram"></i>
         </a>
         <a href="https://wa.me/5571993083959" target="_blank" class="bg-[#25D366] w-14 h-14 rounded-full flex items-center justify-center text-white text-3xl shadow-xl transform active:scale-90 transition">
@@ -30,136 +27,83 @@
         </a>
     </div>
 
-    <header class="p-4" id="section-promo">
-        <a href="https://wa.me/5571993083959?text=Quero%20saber%20mais%20sobre%20as%20promoções%20da%20semana" class="block relative h-[200px] rounded-2xl overflow-hidden gold-glow border border-[#C5A572]/50">
-            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800" class="absolute inset-0 w-full h-full object-cover brightness-[0.4]">
-            <div class="relative z-10 flex flex-col items-center justify-center h-full text-center p-4">
-                <span class="bg-[#C5A572] text-black text-[10px] font-extrabold px-3 py-1 rounded-full mb-2 uppercase italic tracking-widest">Destaque da Semana</span>
-                <h2 class="text-white text-3xl font-serif">Moda Verão 2026</h2>
-                <p class="text-[#C5A572] font-bold text-sm mt-1 uppercase tracking-tighter">Peças exclusivas com preços de ateliê</p>
-            </div>
-        </a>
+    <header class="p-6 text-center">
+        <h1 class="font-serif text-4xl font-bold tracking-tight text-black">ME VESTE <span class="text-[#C5A572]">DEDA</span></h1>
+        <p class="text-[10px] tracking-[0.4em] text-gray-400 uppercase mt-2 italic">Costura Sob Medida • Salvador</p>
     </header>
 
-    <div class="text-center py-4">
-        <h1 class="font-serif text-4xl font-bold tracking-tight text-black">ME VESTE <span class="text-[#C5A572]">DEDA</span></h1>
-        <p class="text-[9px] tracking-[0.4em] text-gray-400 uppercase">Costura Artesanal • Salvador</p>
-    </div>
+    <section class="px-6 mb-10">
+        <div class="bg-white p-6 rounded-[32px] shadow-sm border gold-border text-center">
+            <h2 class="text-sm font-bold uppercase tracking-widest mb-4">Gerenciar Catálogo</h2>
+            <label class="cursor-pointer inline-flex items-center gap-2 bg-[#C5A572] text-white px-6 py-3 rounded-full hover:bg-black transition-all active:scale-95 shadow-lg">
+                <i class="fa-solid fa-plus"></i>
+                <span class="text-xs font-bold uppercase">Adicionar Novo Look</span>
+                <input type="file" id="inputFoto" class="hidden" accept="image/*">
+            </label>
+            <p class="text-[10px] text-gray-400 mt-4 italic">As fotos ficarão salvas neste navegador.</p>
+        </div>
+    </section>
 
-    <div class="flex gap-3 overflow-x-auto px-4 mb-8 no-scrollbar">
-        <button onclick="filterContent('all')" id="btn-all" class="filter-btn filter-active px-6 py-2 rounded-full text-[11px] font-bold whitespace-nowrap uppercase transition">Tudo</button>
-        <button onclick="filterContent('vestido')" id="btn-vestido" class="filter-btn bg-white border border-gray-200 px-6 py-2 rounded-full text-[11px] font-bold whitespace-nowrap uppercase transition">Vestidos</button>
-        <button onclick="filterContent('reforma')" id="btn-reforma" class="filter-btn bg-white border border-gray-100 px-6 py-2 rounded-full text-[11px] font-bold whitespace-nowrap uppercase transition">Reformas</button>
-        <button onclick="filterContent('verao')" id="btn-verao" class="filter-btn bg-white border border-gray-100 px-6 py-2 rounded-full text-[11px] font-bold whitespace-nowrap uppercase transition gold-glow border-[#C5A572]">Moda Verão ✨</button>
-        <button onclick="filterContent('portf')" id="btn-portf" class="filter-btn bg-white border border-gray-100 px-6 py-2 rounded-full text-[11px] font-bold whitespace-nowrap uppercase transition italic">Minhas Criações</button>
-    </div>
-
-    <div class="px-4 space-y-6">
-        
-        <section id="cat-vestido" class="content-item">
-            <div class="bg-white rounded-3xl p-1 shadow-sm border border-gray-100">
-                <div class="flex items-center p-4 gap-4">
-                    <div class="w-16 h-16 rounded-2xl bg-[#FAF9F6] flex items-center justify-center border border-[#C5A572]/20">
-                        <i class="fa-solid fa-person-dress text-3xl text-[#C5A572]"></i>
-                    </div>
-                    <div class="flex-1">
-                        <h3 class="font-bold text-lg font-serif">Vestido Sob Medida</h3>
-                        <p class="text-[11px] text-[#C5A572] font-semibold italic">"Feito no seu corpo"</p>
-                    </div>
-                </div>
-                
-                <div class="px-4 pb-4 space-y-2">
-                    <a href="https://wa.me/5571993083959?text=Quero%20um%20Vestido%20Curto%20de%20Viscose" class="price-item flex justify-between items-center p-3 bg-[#FAF9F6] rounded-xl transition">
-                        <span class="text-sm font-medium">Vestido Curto (Viscose)</span>
-                        <span class="font-bold text-black">R$ 45</span>
-                    </a>
-                    <a href="https://wa.me/5571993083959?text=Quero%20um%20Vestido%20Longo%20de%20Linho" class="price-item flex justify-between items-center p-3 bg-[#FAF9F6] rounded-xl transition">
-                        <span class="text-sm font-medium">Vestido Longo (Linho)</span>
-                        <span class="font-bold text-black">R$ 60</span>
-                    </a>
-                    <a href="https://wa.me/5571993083959?text=Quero%20um%20Vestido%20de%20Festa" class="price-item flex justify-between items-center p-3 bg-[#FAF9F6] rounded-xl transition border border-[#C5A572]/20">
-                        <span class="text-sm font-medium">Vestido de Festa</span>
-                        <span class="font-bold text-black text-xs">A partir R$ 85</span>
-                    </a>
-                </div>
+    <main class="px-6">
+        <h3 class="font-serif text-2xl mb-6">Coleção da Semana</h3>
+        <div id="galeria" class="grid grid-cols-2 gap-4">
             </div>
-        </section>
+    </main>
 
-        <section id="cat-reforma" class="content-item">
-            <div class="bg-white rounded-3xl p-1 shadow-sm border border-gray-100">
-                <div class="flex items-center p-4 gap-4">
-                    <div class="w-16 h-16 rounded-2xl bg-[#FAF9F6] flex items-center justify-center border border-[#C5A572]/20">
-                        <i class="fa-solid fa-mitten text-3xl text-[#C5A572]"></i>
-                    </div>
-                    <div class="flex-1">
-                        <h3 class="font-bold text-lg font-serif">Reformas em Geral</h3>
-                        <p class="text-[11px] text-gray-400 font-semibold italic">"Do jeito que você quer"</p>
-                    </div>
-                </div>
-                
-                <div class="px-4 pb-4 grid grid-cols-2 gap-2">
-                    <div class="p-3 bg-gray-50 rounded-xl border border-gray-100">
-                        <p class="text-[10px] text-gray-400 uppercase font-bold">Bainha</p>
-                        <p class="font-bold">R$ 15</p>
-                    </div>
-                    <div class="p-3 bg-gray-50 rounded-xl border border-gray-100">
-                        <p class="text-[10px] text-gray-400 uppercase font-bold">Zíper</p>
-                        <p class="font-bold">R$ 12</p>
-                    </div>
-                    <div class="p-3 bg-gray-50 rounded-xl border border-gray-100">
-                        <p class="text-[10px] text-gray-400 uppercase font-bold">Ajuste Cintura</p>
-                        <p class="font-bold">R$ 20</p>
-                    </div>
-                    <div class="p-3 bg-gray-50 rounded-xl border border-gray-100">
-                        <p class="text-[10px] text-gray-400 uppercase font-bold">Apertar Calça</p>
-                        <p class="font-bold">R$ 18</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="cat-portf" class="content-item hidden">
-            <h4 class="font-serif text-center text-xl mb-4 text-[#C5A572]">Minhas Criações</h4>
-            <div class="grid grid-cols-2 gap-3">
-                <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400" class="rounded-2xl h-40 w-full object-cover">
-                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400" class="rounded-2xl h-40 w-full object-cover">
-            </div>
-        </section>
-
-    </div>
+    <footer class="mt-20 text-center opacity-30 py-10">
+        <p class="text-[9px] uppercase tracking-[0.6em]">Deda Ateliê 2026</p>
+    </footer>
 
     <script>
-        function filterContent(category) {
-            // Remove classe ativa de todos os botões
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('filter-active');
-                btn.classList.add('bg-white');
-            });
+        const inputFoto = document.getElementById('inputFoto');
+        const galeria = document.getElementById('galeria');
 
-            // Adiciona classe ativa no botão clicado
-            document.getElementById('btn-' + category).classList.add('filter-active');
+        // Carregar fotos salvas ao abrir o site
+        window.onload = () => {
+            const salvas = JSON.parse(localStorage.getItem('me_veste_deda_fotos') || '[]');
+            salvas.forEach(foto => renderizarFoto(foto));
+        };
 
-            // Lógica de exibição
-            const items = document.querySelectorAll('.content-item');
-            
-            if (category === 'all') {
-                items.forEach(item => item.classList.remove('hidden'));
-            } else if (category === 'vestido') {
-                items.forEach(item => {
-                    item.id === 'cat-vestido' ? item.classList.remove('hidden') : item.classList.add('hidden');
-                });
-            } else if (category === 'reforma') {
-                items.forEach(item => {
-                    item.id === 'cat-reforma' ? item.classList.remove('hidden') : item.classList.add('hidden');
-                });
-            } else {
-                // Outras categorias como 'verao' ou 'portf'
-                items.forEach(item => {
-                    item.id === 'cat-' + category ? item.classList.remove('hidden') : item.classList.add('hidden');
-                });
+        inputFoto.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const base64 = event.target.result;
+                    salvarFoto(base64);
+                    renderizarFoto(base64);
+                };
+                reader.readAsDataURL(file);
             }
+        });
+
+        function salvarFoto(base64) {
+            const salvas = JSON.parse(localStorage.getItem('me_veste_deda_fotos') || '[]');
+            salvas.push(base64);
+            localStorage.setItem('me_veste_deda_fotos', JSON.stringify(salvas));
+        }
+
+        function removerFoto(elemento, base64) {
+            let salvas = JSON.parse(localStorage.getItem('me_veste_deda_fotos') || '[]');
+            salvas = salvas.filter(f => f !== base64);
+            localStorage.setItem('me_veste_deda_fotos', JSON.stringify(salvas));
+            elemento.parentElement.remove();
+        }
+
+        function renderizarFoto(base64) {
+            const div = document.createElement('div');
+            div.className = 'relative group rounded-3xl overflow-hidden aspect-[3/4] bg-gray-100 gold-border';
+            div.innerHTML = `
+                <img src="${base64}" class="w-full h-full object-cover">
+                <button onclick="removerFoto(this, '${base64}')" class="delete-btn absolute top-2 right-2 bg-red-500 text-white w-8 h-8 rounded-full shadow-lg">
+                    <i class="fa-solid fa-trash-can text-xs"></i>
+                </button>
+                <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/60 to-transparent">
+                    <p class="text-white text-[10px] font-bold uppercase tracking-tighter">Peça Única</p>
+                </div>
+            `;
+            galeria.prepend(div);
         }
     </script>
-
 </body>
 </html>
